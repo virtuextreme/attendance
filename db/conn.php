@@ -1,9 +1,21 @@
 <?php
-    $host='127.0.0.1';
-    $db = 'attendance_db';
-    $user = 'root';
-    $pass = 'p@ssw0rd';
+   //Developement Connection
+   //$host='127.0.0.1';
+   //$db = 'attendance_db';
+   //$user = 'root';
+   //$pass = 'p@ssw0rd';
+   //$charset = 'utf8mb4';
+   
+   
+   
+   
+   // Remore Database connection
+   $host='remotemysql.com';
+    $db = '8IdmzXv6Za';
+    $user = '8IdmzXv6Za';
+    $pass = 'EfEjL2UhQJ';
     $charset = 'utf8mb4';
+    
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
     try{
