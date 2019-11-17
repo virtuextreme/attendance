@@ -57,7 +57,7 @@
         //DONT ENTER TWO USER WITH THE SAME USERNAME
         public function getUserbyUSERNAME($username){
             try {
-                $sql = "SELECT count(*) as num users WHERE username = :username";
+                $sql = "SELECT count(*) as num from users WHERE username = :username";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':username', $username);
                
@@ -70,6 +70,16 @@
                 return false;
             }
         }
-
+        //i see function but do not see this call anywhere
+        /*public function getUsers(){
+            try{
+                $sql = "SELECT * FROM users";
+                $result = $this->db->query($sql);
+                return $result;
+            }catch(PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
+        }*/
     }
 ?>
