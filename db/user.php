@@ -70,16 +70,6 @@
                 return false;
             }
         }
-        //i see function but do not see this call anywhere
-        /*public function getUsers(){
-            try{
-                $sql = "SELECT * FROM users";
-                $result = $this->db->query($sql);
-                return $result;
-            }catch(PDOException $e){
-                echo $e->getMessage();
-                return false;
-            }
-        }*/
+        
     }
 ?>
