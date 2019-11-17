@@ -32,5 +32,5 @@
     $user = new user ($pdo);
 
     //this dont work.
-    $user->insertUser("admin","password");
+    //$user->insertUser("admin","password");
 ?>
