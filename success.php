@@ -2,6 +2,7 @@
     $title = 'Success';
     require_once 'includes/header.php';
     require_once 'db/conn.php';
+    require_once 'sendemail.php';
 
     if (isset($_POST['submit'])){
         //extract value from the _POST array
@@ -14,14 +15,14 @@
 
         //call fuction to insert & track if success or not
         $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty); 
-
-        if ($isSuccess){
-            //echo '<h1 class="text-center text-success">You Have Been Registered!</h1>';
+        $specialtyName = $crud->getSpecialtyById($specialty);
+        
+        if($isSuccess){
+            SendEmail::SendMail($email, 'Welcome to IT Conference 2019', 'You have successfully registerted for this year\'s IT Conference');
             include 'includes/successmessage.php';
-        }else{
-            //echo '<h1 class="text-center text-danger">There is an error in processing!</h1>';
+        }
+        else{
             include 'includes/errormessage.php';
-           
         }
     }
 ?>
